@@ -1,3 +1,7 @@
+import sys
+import os
+project_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(project_root, ".."))
 from godot_rl.wrappers.stable_baselines_wrapper import StableBaselinesGodotEnv
 from typing import Any, Dict, List, Optional, Tuple
 import pathlib

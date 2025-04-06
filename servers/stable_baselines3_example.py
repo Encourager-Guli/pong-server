@@ -1,3 +1,7 @@
+import sys
+import os
+project_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(project_root, ".."))
 import argparse
 import os
 import pathlib
@@ -20,7 +24,7 @@ if can_import("ray"):
 parser = argparse.ArgumentParser(allow_abbrev=False)
 parser.add_argument(
     "--opponent_path",
-    default="model_0307-2.zip",
+    default="servers/model_0307-2.zip",
     type=str,
     help="预训练ai文件地址，如果给出，将会使用agent控制对方ai",
 )

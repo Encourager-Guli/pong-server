@@ -32,14 +32,7 @@ pip install -r requirements.txt
 使用以下命令启动训练：
 
 ```bash
-python servers/stable_baselines3_example.py \
-    --resume_model_path model_0307-2.zip \
-    --env_path Pong_60FPS_selfplay.exe \
-    --experiment_name experiment01 \
-    --save_checkpoint_frequency 10000 \
-    --n_parallel 16 \
-    --linear_lr_schedule \
-    --speedup 4
+python servers/stable_baselines3_example.py   --opponent_mpath servers/models/01.zip  --resume_model_path servers/models/01.zip     --env_path servers/Pong_60FPS_selfplay.exe    --experiment_name experiment01     --save_checkpoint_frequency 10000     --n_parallel 4     --linear_lr_schedule     --speedup 4
 ```
 
 ### 启动推理（对战模式）
@@ -47,7 +40,7 @@ python servers/stable_baselines3_example.py \
 使用以下命令启动推理服务器，加载已训练模型与客户端进行对战：
 
 ```bash
-python servers/server.py --opponent_path model_0307-2.zip
+python servers/server.py --opponent_path servers/models/01.zip
 ```
 
 ## 🕹️ 启动游戏
